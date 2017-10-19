@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "aa.bb";
+option java_outer_classname = "BlockchainProto";
+option objc_class_prefix = "HLW";
+
+package bb;
+
+// The greeting service definition.
+service BlockChain {
+  // Sends a greeting
+  rpc ProcessCOMM (ProcessRequest) returns (ProcessResponse) {}
+}
+
+// The request message containing the user's name.
+message ProcessRequest {
+int32 requestType = 1;
+string args = 2;
+bytes document = 3;
+}
+
+// The response message containing the greetings
+message ProcessResponse {
+  int32 status = 1;
+  string message = 2;
+  bytes payload = 3;
+}
